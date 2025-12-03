@@ -42,3 +42,17 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
