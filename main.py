@@ -15,7 +15,7 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    return render_template
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=81, debug=True)
