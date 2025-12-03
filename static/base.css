@@ -12,16 +12,33 @@ body {
 }
 
 header {
-    background: #35424a;
+    background: #1E1E2F;
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
 }
 
 .pres {
-    height: 20%;
+    background: #1E1E2F;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    background-color: #1E1E2F; /* bleu nuit */
-    color: white;
-    display: flex;
+}
+
+main {
+    background-color: #F7F8FC;
+    color: #1A1A1A;
+}
+
+footer {
+    background: #1E1E2F;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
