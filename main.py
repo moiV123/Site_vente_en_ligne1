@@ -46,7 +46,7 @@ def login():
     return render_template("login.html")
 
 @app.route("/register", methods=["GET", "POST"])
-def signup():
+def register():
     if request.method == "POST":
         if "username" not in request.form or "password" not in request.form or "confirm_password" not in request.form:
             return render_template("register.html", erreur="Veuillez remplir tous les champs.")
