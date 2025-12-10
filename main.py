@@ -35,7 +35,7 @@ def login():
         if user:
             print("Utilisateur trouvé :", user)  # Debug
             # Vérification du mot de passe (en clair)
-            if request.form["password"] == user["user_password"]:
+            if request.form["password"] == user["password"]:
                 session["user_id"] = request.form["username"]
                 return redirect(url_for("index"))
             else:
