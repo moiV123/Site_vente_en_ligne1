@@ -45,9 +45,28 @@ def login():
             return render_template("login.html", erreur="Utilisateur non trouvé.")
     return render_template("login.html")
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    return render_template
+@app.route("/register", methods=["GET", "POST"])
+def signup():
+    if request.method == "POST":
+        if "username" not in request.form or "password" not in request.form or "confirm_password" not in request.form:
+            return render_template("register.html", erreur="Veuillez remplir tous les champs.")
+        
+        db_user = db["users"]
+        new_user = db_user.find_one({"username": request.form["username"]})
+        if new_user:
+            return render_template("register.html", erreur="Nom d'utilisateur déjà pris.")
+        else:
+            if request.form["password"] == request.form["confirm_password"]:
+                # Insertion du mot de passe en clair (non haché)
+                db_user.insert_one({
+                    "username": request.form["username"],
+                    "password": request.form["password"]
+                })
+                session["user_id"] = request.form["username"]
+                return redirect(url_for("index"))
+            else:
+                return render_template("register.html", erreur="Les mots de passe ne correspondent pas.")
+    return render_template("register.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=81, debug=True)
