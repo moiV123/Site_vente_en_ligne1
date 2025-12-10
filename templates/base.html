@@ -17,7 +17,9 @@
             <li><a href="/" class="bouton_accueil">Accueil</a></li>
             <li><a href="/login" class="bouton_login">Se connecter</a></li>
             <li><a href="/register" class="bouton_register">S'enregistrer</a></li>
+            {% if session.get('user_id') %}
             <li><a href="/account" class="bouton_compte">Votre compte</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>
