@@ -2,6 +2,15 @@ from flask import Flask, render_template, request, redirect, url_for, session  #
 import pymongo  # type: ignore
 import os
 import certifi
+#from urllib.parse import quote_plus
+
+#uri = os.environ.get("MONGO_URI")
+
+#try:
+#    client = MongoClient(uri, serverSelectionTimeoutMS=5000)
+#    print("connected, server_info:", client.server_info())  # will raise on auth/network errors
+#except Exception as e:
+#    print("Connection failed:", type(e).__name__, e)
 
 app = Flask(__name__)
 
