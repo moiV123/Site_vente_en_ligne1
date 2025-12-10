@@ -14,7 +14,7 @@ import certifi
 
 app = Flask(__name__)
 
-mongo_uri = "mongodb+srv://valentinblp_db_user:MOtX6wfcNPOqw76Z@cluster0.61gvza5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+mongo_uri = "mongodb+srv://valentinblp_db_user:MOtX6wfcNPOqw76Z@cluster0.gukwdqe.mongodb.net/?appName=Cluster0"
 client = pymongo.MongoClient(mongo_uri, tlsCAFile=certifi.where())
 db = client["Site_vente"]
 
