@@ -13,6 +13,7 @@ import certifi
 #    print("Connection failed:", type(e).__name__, e)
 
 app = Flask(__name__)
+app.secret_key = "j'ad0re_le_c0de"  # Clé secrète pour les sessions
 
 mongo_uri = "mongodb+srv://valentinblp_db_user:MOtX6wfcNPOqw76Z@cluster0.gukwdqe.mongodb.net/?appName=Cluster0"
 client = pymongo.MongoClient(mongo_uri, tlsCAFile=certifi.where())
