@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="text-3xl font-extrabold text-center mb-10 text-slate-900">
+  Résultats pour "{{ query }}"
+</h2>
+
+<section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  {% for item in annonce %}
+  <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col">
+    <h3 class="text-xl font-semibold mb-2 text-slate-800">{{ item.titre }}</h3>
+    <p class="text-slate-600 flex-grow">{{ item.description }}</p>
+    <a href="#" class="mt-4 text-blue-600 font-medium hover:underline">Lire plus →</a>
+  </article>
+  {% else %}
+  <p class="col-span-full text-center text-slate-500">Aucune annonce pour le moment.</p>
+  {% endfor %}
+
+  {% if annonce|length == 0 %}
+    <p class="col-span-full text-center text-slate-500">Aucun résultat trouvé pour "{{ query }}".</p>
+  {% endif %}
+</section>
+
+{% endblock %}
