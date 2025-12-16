@@ -57,7 +57,6 @@ def register():
             return render_template("register.html", erreur="Nom d'utilisateur déjà pris.")
         else:
             if request.form["password"] == request.form["confirm_password"]:
-                # Insertion du mot de passe en clair (non haché)
                 db_user.insert_one({
                     "username": request.form["username"],
                     "password": request.form["password"]
