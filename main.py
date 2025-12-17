@@ -67,5 +67,27 @@ def register():
                 return render_template("register.html", erreur="Les mots de passe ne correspondent pas.")
     return render_template("register.html")
 
+@app.route("/publish", methods=["GET", "POST"])
+def publish():
+    if 'user_id' not in session:
+        return redirect(url_for("login"))
+    
+    if request.method == "POST":
+        titre = request.form.get("titre_annonce")
+        description = request.form.get("description_annonce")
+        auteur = session["user_id"]
+
+        if titre and description:
+            db_annonces = db["Annonce"]
+            db_annonces.insert_one({
+                "titre": titre,
+                "description": description,
+                "auteur": auteur
+            })
+            return redirect(url_for("index"))
+        else:
+            return render_template("publish.html", erreur="Veuillez remplir tous les champs.")
+    return render_template("publish.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=81, debug=True)
