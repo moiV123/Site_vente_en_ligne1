@@ -288,8 +288,3 @@ header form button:hover {
     border-top: 5px solid #ffffff;
     border-radius: 50%;
 }
-
-.scroll-animate {
-    opacity: 0; /* état initial pour l’animation */
-    transform: translateY(50px);
-}
