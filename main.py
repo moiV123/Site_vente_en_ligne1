@@ -112,6 +112,44 @@ def view_annonce(annonce_id):
 
     return render_template("annonce.html", annonce=annonce)
 
+@app.route("/search")
+def search():
+    query = request.args.get("query", "").strip()
+
+    db_annonces = db["annonce"]
+
+    if query:
+        # Recherche insensible à la casse sur le titre ou la description
+        annonces = list(db_annonces.find({
+            "$or": [
+                {"titre": {"$regex": query, "$options": "i"}},
+                {"description": {"$regex": query, "$options": "i"}}
+            ]
+        }))
+    else:
+        annonces = []
+
+    return render_template("search_result.html", annonce=annonces, query=query)
+
+@app.route("/search")
+def search():
+    query = request.args.get("query", "").strip()
+
+    db_annonces = db["annonce"]
+
+    if query:
+        # Recherche insensible à la casse sur le titre ou la description
+        annonces = list(db_annonces.find({
+            "$or": [
+                {"titre": {"$regex": query, "$options": "i"}},
+                {"description": {"$regex": query, "$options": "i"}}
+            ]
+        }))
+    else:
+        annonces = []
+
+    return render_template("search_result.html", annonce=annonces, query=query)
+
 # Route pour la déconnexion
 @app.route("/logout")
 def logout():
