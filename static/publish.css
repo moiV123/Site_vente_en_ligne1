@@ -1,0 +1,69 @@
+/* CONTENEUR DU FORMULAIRE */
+.publish-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* ERREUR */
+.publish-error {
+    background: #ffe5e5;
+    color: #a30000;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* GROUPES LABEL + INPUT */
+.publish-container > form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+/* LABEL */
+.publish-container label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+/* INPUT */
+.publish-container input[type="text"] {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+/* FOCUS INPUT */
+.publish-container input[type="text"]:focus {
+    outline: none;
+    border-color: #4A5DFF;
+    box-shadow: 0 0 0 2px rgba(74,93,255,0.15);
+}
+
+/* BOUTON */
+.publish-container button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #4A5DFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* HOVER BOUTON */
+.publish-container button:hover {
+    background: #3b4ae0;
+}

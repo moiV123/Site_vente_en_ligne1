@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+{% if erreur %}
+    <p>Erreur : {{erreur}}</p>
+{% endif %}
+
+<div>
+    <form method="POST" action="{{url_for('publish')}}">
+        <div>
+            <label for="titre_annonce">Titre :</label>
+            <input type="text" id="titre_annonce" name="titre_annonce" required>
+        </div>
+        <div>
+            <label for="description">Description :</label>
+            <input type="text" id="description_annonce" name="description_annonce" required>
+        </div>
+        <button type="submit">Publier</button>
+    </form>
+</div>
+
+{% endblock %}
