@@ -250,3 +250,19 @@ header form button:hover {
     color: #555;
     font-size: 1.1rem;
 }
+
+.voir-plus-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #4A5DFF;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.voir-plus-btn:hover {
+    background: #3b4ae0;
+}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="publish-container">
+    <img src="{{ annonce.image }}" class="img_article">
+    <h2 class="titre_article">{{ annonce.titre }}</h2>
+    <p class="description_article">{{ annonce.description }}</p>
+    <p class="prix_article">{{ annonce.prix }}</p>
+    <p class="auteur_article">Par {{ annonce.auteur }}</p>
+</div>
+
+{% endblock %}

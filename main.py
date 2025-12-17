@@ -99,6 +99,21 @@ def publish():
             return render_template("publish.html", erreur="Veuillez remplir tous les champs.")
     return render_template("publish.html")
 
+from bson.objectid import ObjectId
+
+@app.route("/annonce/<annonce_id>")
+def view_annonce(annonce_id):
+    db_annonces = db["annonce"]
+    try:
+        annonce = db_annonces.find_one({"_id": ObjectId(annonce_id)})
+    except:
+        annonce = None
+
+    if not annonce:
+        return "Annonce non trouvée", 404
+
+    return render_template("annonce.html", annonce=annonce)
+
 # Route pour la déconnexion
 @app.route("/logout")
 def logout():
