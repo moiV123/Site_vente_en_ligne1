@@ -21,7 +21,13 @@ db = client["Site_vente"]
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    db_annonces = db["annonce"]
+    annonces = list(db_annonces.find())
+
+    return render_template(
+        'index.html',
+        annonce=annonces
+    )
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
