@@ -1,12 +1,4 @@
-/* CONTENEUR DES RÉSULTATS */
-.search-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    justify-items: center;
-}
-
-/* Titre de la page résultats */
+/* Titre résultats */
 .search-title {
     font-size: 2rem;
     text-align: center;
@@ -14,22 +6,12 @@
     color: #1A1A1A;
 }
 
-/* Carte annonce (hérite du style existant) */
-.search-results .annonce {
-    max-width: 100%;
-}
-
-/* Lien lire plus */
-.search-results .annonce a {
-    display: inline-block;
-    margin-top: 15px;
-    color: #4A5DFF;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.search-results .annonce a:hover {
-    text-decoration: underline;
+/* Même section que l'accueil, mais en grille */
+.article_pres_search {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-items: center;
 }
 
 /* Message aucun résultat */
@@ -38,5 +20,4 @@
     text-align: center;
     font-size: 1.1rem;
     color: #555;
-    margin-top: 30px;
 }
