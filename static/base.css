@@ -198,3 +198,53 @@ header form button:hover {
     width: 220px;
     background: transparent;
 }
+
+/* CONTENEUR GLOBAL DES ANNONCES */
+.annonces-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* ON GARDE article_pres MAIS ON L’ALLÈGE */
+.article_pres {
+    padding: 0;
+    display: contents; /* clé pour ne pas casser la grille */
+}
+
+/* CARTE ANNONCE (EXISTANTE, ON N’Y TOUCHE PAS) */
+.annonce {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.annonce:hover {
+    transform: translateY(-5px);
+}
+
+/* PRIX */
+.prix_article {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #4A5DFF;
+}
+
+/* AUTEUR */
+.auteur_article {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* MESSAGE AUCUNE ANNONCE */
+.no-annonce {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+}

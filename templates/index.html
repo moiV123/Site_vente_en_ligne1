@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<div class="annonces-container">
+
 {% for item in annonce %}
 <section class="article_pres">
     <article class="annonce">
@@ -14,4 +17,7 @@
 {% else %}
 <p class="no-annonce">Aucune annonce pour le moment.</p>
 {% endfor %}
+
+</div>
+
 {% endblock %}
