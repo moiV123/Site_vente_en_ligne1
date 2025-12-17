@@ -82,7 +82,6 @@ def publish():
         titre = request.form.get("titre_annonce")
         description = request.form.get("description_annonce")
         prix = request.form.get("description_prix")
-        image = request.form.get("description_image")
         auteur = session["user_id"]
 
         if titre and description:
@@ -91,7 +90,6 @@ def publish():
                 "titre": titre,
                 "description": description,
                 "prix": prix,
-                "image": image,
                 "auteur": auteur
             })
             return redirect(url_for("index"))
