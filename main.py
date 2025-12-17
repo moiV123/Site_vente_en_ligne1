@@ -80,7 +80,7 @@ def publish():
         auteur = session["user_id"]
 
         if titre and description:
-            db_annonces = db["Annonce"]
+            db_annonces = db["annonce"]
             db_annonces.insert_one({
                 "titre": titre,
                 "description": description,
