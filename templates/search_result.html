@@ -2,24 +2,27 @@
 
 {% block content %}
 
-<h2 class="text-3xl font-extrabold text-center mb-10 text-slate-900">
-  Résultats pour "{{ query }}"
+<h2 class="search-title">
+    Résultats pour "{{ query }}"
 </h2>
 
-<section class="results-grid">
-  {% for item in annonce %}
-  <article class="result-card">
-    <h3>{{ item.titre }}</h3>
-    <p>{{ item.description }}</p>
-    <a href="#">Lire plus →</a>
-  </article>
-  {% else %}
-  <p class="no-results">Aucune annonce pour le moment.</p>
-  {% endfor %}
+<section class="search-results">
 
-  {% if annonce|length == 0 %}
-    <p class="no-results">Aucun résultat trouvé pour "{{ query }}".</p>
-  {% endif %}
+    {% for item in annonce %}
+    <article class="annonce">
+        <img src="" class="img_article">
+        <h2 class="titre_article">{{ item.titre }}</h2>
+        <p class="description_article">{{ item.description }}</p>
+        <a href="#">Lire plus →</a>
+    </article>
+    {% else %}
+    <p class="no-result">Aucune annonce pour le moment.</p>
+    {% endfor %}
+
+    {% if annonce|length == 0 %}
+        <p class="no-result">Aucun résultat trouvé pour "{{ query }}".</p>
+    {% endif %}
+
 </section>
 
 {% endblock %}
