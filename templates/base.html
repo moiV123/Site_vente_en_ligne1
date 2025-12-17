@@ -28,7 +28,9 @@
             <li><a href="/login" class="bouton_login">Se connecter</a></li>
             <li><a href="/register" class="bouton_register">S'enregistrer</a></li>
             {% if session.get('user_id') %}
+            <li ><a href="/publish" class="bouton_publier">Publier une annonce</a></li>
             <li><a href="/account" class="bouton_compte">Votre compte</a></li>
+            <li><a href="/logout" class="bouton_logout">Se déconnecter</a></li>
             {% endif %}
         </ul>
     </nav>

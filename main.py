@@ -93,5 +93,11 @@ def publish():
             return render_template("publish.html", erreur="Veuillez remplir tous les champs.")
     return render_template("publish.html")
 
+# Route pour la déconnexion
+@app.route("/logout")
+def logout():
+    session.pop("user_id", None)
+    return redirect(url_for("index"))
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=81, debug=True)
