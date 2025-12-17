@@ -11,11 +11,16 @@
 </head>
 <body>
 <header>
-    <form action="/search" method="get" class="search-form">
-        <span class="search-icon">🔎</span>
-        <input type="text" name="query" placeholder="recherche…">
-    </form>
+
+    <div class="header-search">
+        <form action="/search" method="get" class="search-form">
+            <span class="search-icon">🔎</span>
+            <input type="text" name="query" placeholder="Rechercher…">
+        </form>
+    </div>
+
     <h1>Site vente en ligne</h1>
+
     <nav>
         <ul>
             <li><a href="/" class="bouton_accueil">Accueil</a></li>
@@ -26,6 +31,7 @@
             {% endif %}
         </ul>
     </nav>
+
 </header>
 
 <main>

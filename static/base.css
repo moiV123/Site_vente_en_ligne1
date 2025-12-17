@@ -165,3 +165,36 @@ header form button:hover {
     width: 200px;
     background: transparent;
 }
+
+/* ZONE RECHERCHE */
+.header-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* BARRE DE RECHERCHE */
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ICÔNE */
+.search-icon {
+    margin-right: 8px;
+    font-size: 1rem;
+    color: #4A5DFF;
+}
+
+/* INPUT */
+.search-form input {
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    width: 220px;
+    background: transparent;
+}
